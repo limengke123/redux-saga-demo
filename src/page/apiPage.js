@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
-import {Spin} from 'antd/lib/spin'
-import 'antd/lib/spin/style/css'
+import List from '../components/List'
 
 function ApiPage({list, isLoading, fetchData}) {
     return (
-        <Spin tip={'Loading...'} spinning={isLoading}>
+        <Fragment>
             <button onClick={fetchData}>fetch data</button>
-            <ul>
-                {list.map(item => <div key={item.id}>{item.title}</div>)}
-            </ul>
-        </Spin>
+            {
+                isLoading ? <div>loading ....</div> : null
+            }
+            <List listData={list}/>
+        </Fragment>
     )
 }
 

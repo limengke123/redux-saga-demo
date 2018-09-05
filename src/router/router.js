@@ -2,6 +2,7 @@ import React, {Fragment} from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import CounterApp from '../page/couterApp'
 import ApiPage from '../page/apiPage'
+import DetailPage from '../page/detailPage'
 
 const CounterRouter = () => {
     return (
@@ -12,6 +13,12 @@ const CounterRouter = () => {
 const ApiPageRouter = () => {
     return (
         <ApiPage />
+    )
+}
+
+const DetailPageRouter = () => {
+    return (
+        <DetailPage />
     )
 }
 
@@ -31,6 +38,7 @@ export const AppWithRouter = () => {
                 <Route path={'/'} exact render={() => <Home />} />
                 <Route path={'/counter'} render={() => <CounterRouter />} />
                 <Route path={'/apiPage'} render={() => <ApiPageRouter />} />
+                <Route path={'/detail:id'} render={() => <DetailPageRouter />} />
             </Fragment>
         </Router>
     )
