@@ -1,19 +1,19 @@
 import {actionTypes} from '../action-type'
-export function pageList(state = {
-    list: [],
+
+export const detailData = (state = {
+    data: {},
     isLoading: false
-}, action) {
+}, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_LIST_SUCCESS:
-            return {
-                ...state,
-                list: action.payload
-            }
-        case actionTypes.LIST_LOADING:
-            console.log(1)
+        case actionTypes.DETAIL_LOADING:
             return {
                 ...state,
                 isLoading: action.payload
+            }
+        case actionTypes.FETCH_DETAIL_SUCCESS:
+            return {
+                ...state,
+                data: action.payload
             }
         default:
             return state

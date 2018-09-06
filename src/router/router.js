@@ -38,7 +38,7 @@ export const AppWithRouter = () => {
                 <Route path={'/'} exact render={() => <Home />} />
                 <Route path={'/counter'} render={() => <CounterRouter />} />
                 <Route path={'/apiPage'} render={() => <ApiPageRouter />} />
-                <Route path={'/detail:id'} render={() => <DetailPageRouter />} />
+                <Route path={'/detail/:id'} render={() => <DetailPageRouter />} />
             </Fragment>
         </Router>
     )

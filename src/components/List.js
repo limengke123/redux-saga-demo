@@ -24,7 +24,7 @@ List.Item = withRouter(function (props) {
             padding: '10px',
             display: 'flex',
             alignItems: 'center'
-        }} onClick={handleClick}>
+        }}>
             <div style={{
                 marginRight: '10px',
                 display: 'flex',
@@ -33,7 +33,7 @@ List.Item = withRouter(function (props) {
                 <img src={avatar_url} alt="头像" style={{width: '30px', height: '30px', marginRight: '5px'}}/>
                 <div>{loginname}</div>
             </div>
-            <div>
+            <div onClick={handleClick}>
                 {title}
             </div>
         </div>
