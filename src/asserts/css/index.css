@@ -1,0 +1,16 @@
+.header_link_active {
+    color: #ccc;
+    text-decoration: none;
+}
+.header_link_active:hover {
+    color: #fff
+}
+.main_link_active:hover{
+}
+.main_item_active:hover {
+    background: #f5f5f5;
+}
+
+.main_link_active:hover {
+    text-decoration: underline;
+}

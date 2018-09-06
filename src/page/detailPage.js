@@ -2,7 +2,9 @@ import React from 'react'
 import {compose} from 'redux'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
+import marked from 'marked'
 import {actionTypes} from '../store/action-type'
+import Container from '../container'
 
 class DetailPage extends React.Component {
     componentDidMount () {
@@ -11,15 +13,33 @@ class DetailPage extends React.Component {
     }
     render () {
         const {detail, isLoading} = this.props
-        const Detail = <div>{detail.title}</div>
+        const Detail = () => {
+            if(!detail.content) return null
+            const content = marked(detail.content)
+            return (
+                <div style={{
+                    width: '800px',
+                    margin: '0 auto'
+                }}>
+                    <div style={{
+                        fontSize: '26px',
+                        textAlign: 'center',
+                        marginBottom: '20px',
+                        fontWeight: 700
+                    }}>
+                        {detail.title}
+                    </div>
+                    <div dangerouslySetInnerHTML={{__html: content}} />
+                </div>
+            )
+        }
         const Loading = <div>loading ...</div>
-        console.log(detail)
         return (
-            <div>
+            <Container>
                 {
-                    isLoading ? Loading : Detail
+                    isLoading ? Loading : <Detail />
                 }
-            </div>
+            </Container>
         )
     }
 }

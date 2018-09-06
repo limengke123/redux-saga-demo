@@ -8,7 +8,11 @@ function* fetchDetail(action) {
         payload: true
     })
     try {
-        const res = yield call(ajax.get, `/topic/${action.payload}`)
+        const res = yield call(ajax.get, `/topic/${action.payload}`, {
+            params: {
+                mdrender: false
+            }
+        })
         yield put({
             type: actionTypes.FETCH_DETAIL_SUCCESS,
             payload: res.data.data

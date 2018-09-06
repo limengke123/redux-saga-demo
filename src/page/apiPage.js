@@ -1,17 +1,26 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import List from '../components/List'
+import Container from '../container'
+import Pagination from '../components/Pagination'
 
-function ApiPage({list, isLoading, fetchData}) {
-    return (
-        <Fragment>
-            <button onClick={fetchData}>fetch data</button>
-            {
-                isLoading ? <div>loading ....</div> : null
-            }
-            <List listData={list}/>
-        </Fragment>
-    )
+class ApiPage extends React.Component {
+    componentDidMount () {
+        const {fetchData} = this.props
+        fetchData()
+    }
+    render () {
+        const {list, isLoading} = this.props
+        return (
+            <Container>
+                {
+                    isLoading ? <div>loading ....</div> : null
+                }
+                <List listData={list}/>
+                <Pagination />
+            </Container>
+        )
+    }
 }
 
 const mapStateToProps = function (state) {
