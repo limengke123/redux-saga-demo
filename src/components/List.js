@@ -40,8 +40,9 @@ List.Item = withRouter(function (props) {
                     alignSelf: 'flex-end'
                 }}>{loginname}</div>
             </div>
-            <Tag tab={tab} top={top} good={good}/>
+            <Tag tab={tab} top={top} good={good} />
             <div onClick={handleClick} style={{
+                marginLeft: '10px',
                 cursor: 'pointer'
             }} className={'main_link_active'}>
                 {title}

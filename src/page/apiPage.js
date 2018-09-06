@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import List from '../components/List'
 import Container from '../container'
 import Pagination from '../components/Pagination'
+import Tab from '../components/tab'
 
 class ApiPage extends React.Component {
     componentDidMount () {
@@ -16,8 +17,9 @@ class ApiPage extends React.Component {
                 {
                     isLoading ? <div>loading ....</div> : null
                 }
+                <Tab />
                 <List listData={list}/>
-                <Pagination />
+                <Pagination current={6} />
             </Container>
         )
     }

@@ -1,9 +1,17 @@
 import React from 'react'
 
-const BaseTag = ({color, word}) => {
+const map = {
+    share: '分享',
+    ask: '问答'
+}
+
+const BaseTag = ({customStyle, word}) => {
     return (
         <div style={{
-
+            ...customStyle,
+            padding: '2px 4px',
+            fontSize: '12px',
+            borderRadius: '3px'
         }}>{word}</div>
     )
 }
@@ -11,15 +19,24 @@ const BaseTag = ({color, word}) => {
 export default function Tag ({tab, top, good}) {
     if(top) {
         return (
-            <div>置顶</div>
+            <BaseTag word={'置顶'} customStyle={{
+                color: '#fff',
+                backgroundColor: '#80bd01'
+            }} />
         )
     } else if (good) {
         return (
-            <div>精华</div>
+            <BaseTag word={"精华"} customStyle={{
+                color: '#fff',
+                backgroundColor: '#80bd01'
+            }}/>
         )
     } else {
         return (
-            <div>{tab}</div>
+            <BaseTag word={map[tab]} customStyle={{
+                color: '#999',
+                backgroundColor: '#e5e5e5'
+            }} />
         )
     }
 }

@@ -45,7 +45,8 @@ class Container extends React.Component {
                     <div style={{
                         width: '90%',
                         margin: '15px auto',
-                        backgroundColor: '#fff'
+                        backgroundColor: '#fff',
+                        padding: '0 0 10px 0'
                     }}>
                         {this.props.children}
                     </div>
@@ -58,13 +59,20 @@ class Container extends React.Component {
                         width: '90%',
                         height: '100%',
                         margin: '0 auto',
-                        display: 'flex',
                         fontSize: '16px',
                         color: '#333',
-                        alignItems: 'center',
-                        justifyContent: 'center'
+                        textAlign: 'center',
                     }}>
-                        powered by react react-router redux react-redux redux-saga
+                        <p style={{
+                            height: '30px',
+                            lineHeight: '30px',
+                            margin: 0
+                        }}>powered by react react-router redux react-redux redux-saga</p>
+                        <p style={{
+                            height: '30px',
+                            lineHeight: '30px',
+                            margin: 0
+                        }}>thanks free api from cnode!</p>
                     </div>
                 </footer>
             </div>
