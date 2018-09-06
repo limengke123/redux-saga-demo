@@ -9,29 +9,16 @@ class DetailPage extends React.Component {
         const {fetchDetail} = this.props
         fetchDetail()
     }
-
-    // fetchData() {
-    //     const {dispatch, match} = this.props
-    //     dispatch({
-    //         type: actionTypes.FETCH_DETAIL,
-    //         payload: match.params.id
-    //     })
-    // }
-
     render () {
-        const {detail, isLoading, fetchDetail} = this.props
-        const Detail = <div>this is detail</div>
+        const {detail, isLoading} = this.props
+        const Detail = <div>{detail.title}</div>
         const Loading = <div>loading ...</div>
-        console.log(isLoading)
+        console.log(detail)
         return (
             <div>
                 {
                     isLoading ? Loading : Detail
                 }
-                <div>
-                    dsadsa
-                </div>
-                <button onClick={fetchDetail}>click</button>
             </div>
         )
     }

@@ -9,7 +9,6 @@ function* fetchList() {
     })
     try {
         const res = yield call(ajax.get, '/topics')
-        console.log(res)
         yield put({
             type: actionTypes.FETCH_LIST_SUCCESS,
             payload: res.data.data

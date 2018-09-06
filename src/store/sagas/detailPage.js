@@ -11,7 +11,7 @@ function* fetchDetail(action) {
         const res = yield call(ajax.get, `/topic/${action.payload}`)
         yield put({
             type: actionTypes.FETCH_DETAIL_SUCCESS,
-            payload: res.data
+            payload: res.data.data
         })
     } catch (e) {
         console.log(e)

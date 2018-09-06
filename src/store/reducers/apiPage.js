@@ -10,7 +10,6 @@ export function pageList(state = {
                 list: action.payload
             }
         case actionTypes.LIST_LOADING:
-            console.log(1)
             return {
                 ...state,
                 isLoading: action.payload
