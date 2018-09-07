@@ -16,9 +16,9 @@
 
 ### apiPage 实例图
 
-<img width="500px" src="/images/cnode.png" alt="页面" />
+<img src="/images/cnode.png" alt="页面" />
 <br/ >
-<img width="500px" src="/images/cnode2.png" alt="页面2" />
+<img src="/images/cnode2.png" alt="页面2" />
 
 ## 小问题
 
