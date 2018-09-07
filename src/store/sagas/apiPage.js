@@ -9,7 +9,11 @@ function* fetchList(action) {
     })
     try {
         let params = {}
-        if (action.payload) params.tab = action.payload
+        if (action.payload) {
+            const {tab = 'all', page = 1} = action.payload
+            params.tab = tab
+            params.page = page
+        }
         const res = yield call(ajax.get, '/topics', {
             params
         })

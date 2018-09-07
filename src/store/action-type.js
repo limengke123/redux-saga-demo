@@ -10,5 +10,8 @@ export const actionTypes = {
     FETCH_LIST: 'FETCH_LIST',
 
     // tab
-    CHANGE_TAB: 'CHANGE_TAB'
+    CHANGE_TAB: 'CHANGE_TAB',
+
+    // currentPage
+    CHANGE_PAGE: 'CHANGE_PAGE'
 }

@@ -7,16 +7,19 @@ import {actionTypes} from '../store/action-type'
 class Tab extends React.Component {
     constructor(props) {
         super(props)
-        const {changeTab, activeTab, location} = props
+        const {changeTab, activeTab} = props
         // 同步 url 上的 tab 参数
         changeTab(activeTab)
     }
     fetchTabData (key, active) {
         if (active) return false
-        const {history, changeTab, fetchList} = this.props
+        const {history, changeTab, fetchList, changePage} = this.props
         history.push(`/apiPage?tab=${key}`)
         changeTab(key)
-        fetchList(key)
+        fetchList({
+            tab: key
+        })
+        changePage()
     }
     render () {
         const tabs = [
@@ -86,12 +89,18 @@ const mapDispatchToProps = (dispatch) => {
                 payload: tab
             })
         },
-        fetchList(tab) {
+        fetchList(queryString) {
             dispatch({
                 type: 'FETCH_LIST',
-                payload: tab
+                payload: queryString
             })
-        }
+        },
+        changePage() {
+            dispatch({
+                type: actionTypes.CHANGE_PAGE,
+                payload: 1
+            })
+        },
     }
 }
 

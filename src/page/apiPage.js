@@ -1,7 +1,6 @@
 import React from 'react'
 import {compose} from 'redux'
 import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
 import List from '../components/List'
 import Container from '../container'
 import Pagination from '../components/Pagination'
@@ -9,21 +8,10 @@ import Tab from '../components/tab'
 import {actionTypes} from "../store/action-type";
 
 class ApiPage extends React.Component {
-    constructor (props) {
-        super(props)
-        const {match} = props
-        // console.log(props)
-        this.syncState(match)
-    }
+
     componentDidMount () {
         const {fetchData} = this.props
         fetchData()
-    }
-
-    syncState (match) {
-        // console.log(match)
-        const {changeTab} = this.props
-        // changeTab('share')
     }
 
     render () {
@@ -35,7 +23,7 @@ class ApiPage extends React.Component {
                 }
                 <Tab />
                 <List listData={list}/>
-                <Pagination current={6} />
+                <Pagination />
             </Container>
         )
     }
@@ -67,6 +55,5 @@ const mapDispatchToProps = function (dispatch) {
 // export default connect(mapStateToProps, mapDispatchToProps)(ApiPage)
 
 export default compose(
-    withRouter,
     connect(mapStateToProps, mapDispatchToProps),
 )(ApiPage)
