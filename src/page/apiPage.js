@@ -6,6 +6,7 @@ import Container from '../container'
 import Pagination from '../components/Pagination'
 import Tab from '../components/tab'
 import {actionTypes} from "../store/action-type";
+import Loading from '../components/loading'
 
 class ApiPage extends React.Component {
 
@@ -17,14 +18,13 @@ class ApiPage extends React.Component {
     render () {
         const {list, isLoading} = this.props
         return (
-            <Container>
-                {
-                    isLoading ? <div>loading ....</div> : null
-                }
-                <Tab />
-                <List listData={list}/>
-                <Pagination />
-            </Container>
+            <Loading isLoading={isLoading}>
+                <Container>
+                    <Tab />
+                    <List listData={list}/>
+                    <Pagination />
+                </Container>
+            </Loading>
         )
     }
 }

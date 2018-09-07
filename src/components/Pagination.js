@@ -28,10 +28,10 @@ class Pagination extends React.Component {
         }
         changePage(page)
         history.push(queryString)
-        scrollTo({
+        document.getElementById('root').scrollTo({
             top: 0,
-            behavior: "smooth"
-        });
+            behavior: 'smooth'
+        })
     }
 
     render () {

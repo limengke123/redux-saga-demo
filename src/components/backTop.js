@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function BackTop () {
     const back = function () {
-        window.scrollTo({
+        document.getElementById('root').scrollTo({
             top: 0,
             behavior: 'smooth'
         })

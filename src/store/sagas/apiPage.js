@@ -1,3 +1,4 @@
+import {delay} from 'redux-saga'
 import {takeLatest, put, call} from 'redux-saga/effects'
 import {actionTypes} from '../action-type'
 import {ajax} from "../../utils"
@@ -9,7 +10,7 @@ function* fetchList(action) {
     })
     try {
         let params = {}
-        if (action.payload) {
+        if (action.payload)  {
             const {tab = 'all', page = 1} = action.payload
             params.tab = tab
             params.page = page
