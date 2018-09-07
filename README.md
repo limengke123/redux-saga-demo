@@ -10,6 +10,20 @@
 
 `redux-saga` 学习之初，难免有很多错误，以及写法会很粗糙。
 
+## apiPage
+
+主要内容是依据 `cnode` 提供的 `api`， 模仿了 `cnode` 的首页，算是基于学习 `redux-saga` 的目的上，把 `react` 相关技术栈应用了一遍，内容不复杂，还是非常适合 `react` 新手来学习的。
+
+### apiPage 实例图
+
+<img width="500px" src="/images/cnode.png" alt="页面" />
+<br/ >
+<img width="500px" src="/images/cnode2.png" alt="页面2" />
+
+## 小问题
+
+由于之前直接是 `fork` 原先的教程项目，那个项目没有用 `webpack-dev-server`，所以 `css-loader` 之类的一些功能是没办法用，同时也没办法设置 `historyFallBack`， 所以 `react-router-dom` 用 `BrowserHistory` 是存在一点小问题的，基本上凑合着能用吧。
+
 ## 启动方式
 
 ```bash
