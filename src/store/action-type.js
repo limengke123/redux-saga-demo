@@ -8,4 +8,7 @@ export const actionTypes = {
     FETCH_LIST_SUCCESS: 'FETCH_LIST_SUCCESS',
     LIST_LOADING: 'LIST_LOADING',
     FETCH_LIST: 'FETCH_LIST',
+
+    // tab
+    CHANGE_TAB: 'CHANGE_TAB'
 }

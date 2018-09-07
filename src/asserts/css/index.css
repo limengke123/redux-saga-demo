@@ -25,14 +25,15 @@
     margin: 0 10px 0 10px;
     color: #80bd01;
     cursor: pointer;
+    font-size: 14px;
+    padding: 0 4px;
 }
 .tab_normal_hover:hover{
-    color: #005580
+    color: #005580;
 }
 
 .tab_active {
     color: #fff;
     background-color: #80bd01;
-    padding: 3px 4px;
     border-radius: 3px;
 }

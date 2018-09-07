@@ -1,7 +1,23 @@
 import React from  'react'
+import {compose} from 'redux'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+import {actionTypes} from '../store/action-type'
 
 class Tab extends React.Component {
+    constructor(props) {
+        super(props)
+        const {changeTab, activeTab, location} = props
+        // 同步 url 上的 tab 参数
+        changeTab(activeTab)
+    }
+    fetchTabData (key, active) {
+        if (active) return false
+        const {history, changeTab, fetchList} = this.props
+        history.push(`/apiPage?tab=${key}`)
+        changeTab(key)
+        fetchList(key)
+    }
     render () {
         const tabs = [
             {
@@ -19,7 +35,6 @@ class Tab extends React.Component {
             {
                 key: 'ask',
                 title: '问答',
-                active: true
             },
             {
                 key: 'job',
@@ -30,6 +45,8 @@ class Tab extends React.Component {
                 title: '客户端测试'
             },
         ]
+        const {activeTab = 'all'} = this.props
+        tabs.map(item => item.key === activeTab ? item.active = true : item.active = false)
         return (
             <div style={{
                 backgroundColor: '#f6f6f6',
@@ -41,7 +58,10 @@ class Tab extends React.Component {
                 {
                     tabs.map(item => {
                         return (
-                            <div key={item.key} className={item.active ? 'tab_normal tab_active' : 'tab_normal tab_normal_hover'}>
+                            <div
+                                key={item.key}
+                                onClick={() => this.fetchTabData(item.key, item.active)}
+                                className={item.active ? 'tab_normal tab_active' : 'tab_normal tab_normal_hover'}>
                                 {item.title}
                             </div>
                         )
@@ -52,8 +72,32 @@ class Tab extends React.Component {
     }
 }
 
-const mapStataToProps = state => state
+const mapStateToProps = state => {
+    return {
+        activeTab: state.tab
+    }
+}
 
-const mapDispatchToProps = dispatch  => dispatch
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeTab(tab) {
+            dispatch({
+                type: actionTypes.CHANGE_TAB,
+                payload: tab
+            })
+        },
+        fetchList(tab) {
+            dispatch({
+                type: 'FETCH_LIST',
+                payload: tab
+            })
+        }
+    }
+}
 
-export default connect()(Tab)
+export default compose(
+    withRouter,
+    connect(mapStateToProps, mapDispatchToProps)
+)(Tab)
+
+// export default Tab

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import CounterApp from '../page/couterApp'
 import ApiPage from '../page/apiPage'
 import DetailPage from '../page/detailPage'

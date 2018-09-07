@@ -2,7 +2,9 @@ import React from 'react'
 
 const map = {
     share: '分享',
-    ask: '问答'
+    ask: '问答',
+    dev: '测试',
+    job: '招聘',
 }
 
 const BaseTag = ({customStyle, word}) => {
@@ -33,7 +35,7 @@ export default function Tag ({tab, top, good}) {
         )
     } else {
         return (
-            <BaseTag word={map[tab]} customStyle={{
+            <BaseTag word={map[tab] || '问答'} customStyle={{
                 color: '#999',
                 backgroundColor: '#e5e5e5'
             }} />
