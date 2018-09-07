@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import BackTop from '../components/backTop'
 
 class Container extends React.Component {
     render () {
@@ -75,6 +76,7 @@ class Container extends React.Component {
                         }}>thanks free api from cnode!</p>
                     </div>
                 </footer>
+                <BackTop />
             </div>
         )
     }

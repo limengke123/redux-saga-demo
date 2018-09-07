@@ -10,7 +10,6 @@ class Pagination extends React.Component {
     fetchPageData(page) {
         const {changePage, history, location, fetchList} = this.props
         const {search} = location
-        console.log(this.props)
         let queryString = '/apiPage'
         if (search && /tab/g.test(search)) {
             // 存在查询字符
