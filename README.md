@@ -1,6 +1,10 @@
 # redux-saga-demo
 
+这个仓库主要是记录 `redux-saga` 学习，使用 `cnode` 的 `api` 写了 `cnode` 的首页，方便 `react` 初学者学习。
+
 > forked from [redux-saga-beginner-tutorial](https://github.com/redux-saga/redux-saga-beginner-tutorial)
+
+## 起因
 
 `redux` 理解地差不多了，但是异步这一块，都是将就着 `redux-thunk` 用，但是这玩意还是不太好用，所以去学一下 `redux-saga`， 算是把 `react` 的生态基本学了一遍，形成了闭圈。一直听说 `redux-saga` 这玩意概念多，比较难搞，
 当初看了一眼是 `generator` 那一套，以为这玩意儿应该是异步操作写法过渡到 `async/await` 的中间过渡态，就不太想学，现在看来自己是太 native。
