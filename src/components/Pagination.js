@@ -55,7 +55,13 @@ class Pagination extends React.Component {
                         if(index === 0 ) return <Pagination.Item changePage={() => this.fetchPageData(1)} name={'pagination_active'} number={item} key={index} customStyle={{
                             border: '1px solid #ddd',
                             cursor: 'pointer',
+                            borderRadius: '4px 0 0 4px'
                         }} />
+                        if(index === arr.length - 1) return <Pagination.Item changePage={() => this.fetchPageData(item)} name={'pagination_active'} number={item} key={index} customStyle={{
+                            border: '1px solid #ddd',
+                            cursor: 'pointer',
+                            borderRadius: '0 4px 4px 0',
+                            borderLeftWidth: 0}}/>
                         if(current === item) return <Pagination.Item number={item} key={index} customStyle={{
                             border: '1px solid #ddd',
                             cursor: 'default',
@@ -81,9 +87,11 @@ class Pagination extends React.Component {
 Pagination.Item = function ({customStyle, number, name, changePage}) {
     return (
         <div style={{
+            color: '#778087',
             ...customStyle,
             padding: '4px 12px',
             textAlign: 'center',
+            fontSize: 14
         }} className={name} onClick={changePage}>
             {number}
         </div>

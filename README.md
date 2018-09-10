@@ -18,6 +18,8 @@
 
 主要内容是依据 `cnode` 提供的 `api`， 模仿了 `cnode` 的首页，算是基于学习 `redux-saga` 的目的上，把 `react` 相关技术栈应用了一遍，内容不复杂，还是非常适合 `react` 新手来学习的。
 
+`Spin`、`BackTop` 两个小组件的样式和动画从 `antd` 那里复制过来的。
+
 ### apiPage 实例图
 
 <img src="/images/cnode.png" alt="页面" />
