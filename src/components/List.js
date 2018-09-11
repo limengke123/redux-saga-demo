@@ -16,7 +16,7 @@ export default function List ({listData}) {
 
 List.Item = withRouter(function (props) {
     const {author, title, id, history, tab, top, good, visit_count, reply_count} = props
-    const {loginname, avatar_url} = author
+    const {avatar_url} = author
     const handleClick = function () {
         history.push(`/detail/${id}`)
     }
