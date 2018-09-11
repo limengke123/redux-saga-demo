@@ -834,15 +834,61 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     background-size: 30px,30px;
     margin-top: 0 !important;
     font-size: 0.93em;
+    font-family: "Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace;
 }
 
 .fmt pre code {
     background: none;
-    font-size: 1em;
+    font-size: 16px;
     overflow-wrap: normal;
     white-space: inherit;
     border-radius: 0;
     padding: 0;
+}
+
+.fmt h1,h2,h3,h4,h5,h6 {
+    color: #515151
+}
+
+.fmt h2 {
+    font-size: 26px;
+    margin: 30px 0 15px;
+    border-bottom: 1px solid #eee;
+    line-height: 40px;
+    font-weight: 700;
+}
+.fmt p {
+    font-size: 15px;
+    line-height: 1.7em;
+    overflow: auto;
+    margin: 1em 0;
+    word-wrap: break-word;
+}
+
+.fmt img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+    cursor: pointer;
+}
+
+.fmt blockquote {
+    border-left: 2px solid #009A61;
+    background: #F6F6F6;
+    color: #555;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.fmt ul{
+    padding-left: 0;
+    margin: 1.5em 0 1.5em 3em;
+}
+.fmt ul li{
+    margin: .3em 0;
 }
 /** 一些自己加的css **/
 
